@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/post_feed"
+    android:layout_width="match_parent"
+    android:layout_height="355dp"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="345dp"
+        app:srcCompat="@drawable/me_textbg"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/postBG"
+        android:scaleType="fitXY"
+        />
+
+    <ImageView
+        android:id="@+id/post_user_space"
+        android:layout_width="210dp"
+        android:layout_height="55dp"
+        android:clickable="true"
+        android:layout_alignTop="@+id/userPicture"
+        android:layout_alignStart="@+id/userPicture" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/messenger_button_send_round_shadow"
+        android:layout_alignTop="@+id/postBG"
+        android:layout_alignLeft="@+id/postBG"
+        android:layout_alignStart="@+id/postBG"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/userPicture" />
+
+    <TextView
+        android:id="@+id/post_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/userPicture"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/userPicture"
+        android:layout_toRightOf="@+id/userPicture"
+        android:text="User Name"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:srcCompat="@drawable/main_line"
+        android:layout_below="@+id/userPicture"
+        android:layout_alignLeft="@+id/postBG"
+        android:layout_marginTop="5dp"
+        android:layout_alignRight="@id/postBG"
+        android:scaleType="fitXY"
+        android:id="@+id/seperator" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/main_like_0"
+        android:layout_below="@id/recycler_view"
+        android:layout_alignLeft="@+id/userPicture"
+        android:layout_alignStart="@+id/userPicture"
+        android:layout_marginTop="10dp"
+        android:id="@+id/post_like"
+        android:clickable="true"
+        android:onClick="likePost"/>
+
+    <TextView
+        android:text="0 likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/numLikes"
+        android:textSize="18sp"
+        android:layout_below="@id/recycler_view"
+        android:layout_toRightOf="@id/post_like" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:layout_below="@+id/seperator"
+        android:layout_alignLeft="@+id/post_like"
+        android:layout_alignStart="@+id/post_like"
+        android:layout_alignTop="@id/seperator"
+        android:layout_marginTop="15dp"
+        android:layout_alignEnd="@+id/postDate" />
+
+    <TextView
+        android:id="@+id/postDescription"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:layout_below="@id/post_like"
+        android:layout_alignStart="@+id/recycler_view"
+        android:layout_alignRight="@id/postBG"
+        android:layout_marginRight="25dp"
+        android:textColor="@color/black_text"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/postDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/post_name"
+        android:layout_alignEnd="@+id/postBG"
+        android:layout_marginRight="8dp"
+        android:textSize="12sp"
+        android:text="2017/04/08 08:30" />
+
+
+</RelativeLayout>
